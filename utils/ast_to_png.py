@@ -86,7 +86,8 @@ def visualize_call_flow(
     # 함수 정의 정보 수집
     for file_path in file_paths:
         try:
-            source_code = open(file_path, encoding='utf-8').read()
+            with open(file_path, encoding='utf-8') as f:
+                source_code = f.read()
             syntax_tree = ast.parse(source_code)
         except Exception:
             continue
@@ -116,7 +117,8 @@ def visualize_call_flow(
     # 호출 그래프 생성 및 타겟 호출 수집
     for file_path in file_paths:
         try:
-            source_code = open(file_path, encoding='utf-8').read()
+            with open(file_path, encoding='utf-8') as f:
+                source_code = f.read()
             syntax_tree = ast.parse(source_code)
         except Exception:
             continue
