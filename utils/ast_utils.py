@@ -54,7 +54,6 @@ def uses_request(function_node: ast.AST) -> bool:
 def collect_functions(syntax_tree: ast.Module) -> dict[str, dict]:
     visitor = FuncVisitor()
     visitor.visit(syntax_tree)
-    FuncVisitor().visit(syntax_tree)
     return visitor.function_info_map
 
 
